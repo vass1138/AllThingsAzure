@@ -1,0 +1,8 @@
+# Show drop down list filtered by episode (not used)
+=OFFSET(Resources!$D$3,MATCH($A2,Resources!$D$3:$D$106,0)-1,-1,COUNTIF(Resources!$D$3:$D$106,$A2),1)
+
+# link resources to episodes
+=IFERROR(HYPERLINK("#" & CELL("address",INDEX(Resources!B3:B106,MATCH($A2,Resources!B3:B106,0))),"View"),"")
+
+# links sources to resources
+=IFERROR(HYPERLINK("#" & CELL("address",INDEX(Sources!A1:A153,MATCH($E3,Sources!A1:A153,0))),"View"),"")
